@@ -54,15 +54,10 @@ public class NoteTests {
 		
 	    Response createResponse = NotesEndPoints.createNote(notePayload, accessToken);
 	    createResponse.then().log().all();
-	    
-	    // Retrieve all notes
 	    Response getAllResponse = NotesEndPoints.getAllNotes(accessToken);
 	    getAllResponse.then().log().all();
-	    
 	    JsonPath jsonPathEvaluator = getAllResponse.jsonPath();
 	    List<Map<String, Object>> notes = jsonPathEvaluator.getList("data");
-
-	    // Verify that the added note is present in the list of retrieved notes
 	    boolean noteFound = false;
 	    for (Map<String, Object> note : notes) {
 	        if (note.get("title").equals(notePayload.getTitle()) &&

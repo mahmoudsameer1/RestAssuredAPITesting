@@ -34,7 +34,7 @@ public class UsersEndPoints {
 	
 	public static Response userprofile(String accessToken) {
 	    Response response = given()
-	      .header("x-auth-token", accessToken) // Include access token in the header
+	      .header("x-auth-token", accessToken)
 	      .contentType(ContentType.JSON)
 	      .accept(ContentType.JSON)
 	    .when()

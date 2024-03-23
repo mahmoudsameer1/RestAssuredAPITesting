@@ -2,56 +2,56 @@
 <testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-21T11:44:56 AST" name="Suite" finished-at="2024-03-21T11:45:10 AST" duration-ms="13645">
+  <suite started-at="2024-03-23T11:46:55 AST" name="Suite" finished-at="2024-03-23T11:47:04 AST" duration-ms="9618">
     <groups>
     </groups>
-    <test started-at="2024-03-21T11:44:56 AST" name="Test" finished-at="2024-03-21T11:45:10 AST" duration-ms="13645">
+    <test started-at="2024-03-23T11:46:55 AST" name="Test" finished-at="2024-03-23T11:47:04 AST" duration-ms="9618">
       <class name="api.test.HealtTests">
-        <test-method signature="createuser()[pri:0, instance:api.test.HealtTests@36060e]" started-at="2024-03-21T11:44:56 AST" name="createuser" description="Verify that the API is healthy" finished-at="2024-03-21T11:45:01 AST" duration-ms="4311" status="PASS">
+        <test-method signature="createuser()[pri:0, instance:api.test.HealtTests@c430e6c]" started-at="2024-03-23T11:46:55 AST" name="createuser" description="Verify that the API is healthy" finished-at="2024-03-23T11:46:58 AST" duration-ms="2992" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createuser -->
       </class> <!-- api.test.HealtTests -->
       <class name="api.test.NoteTests">
-        <test-method is-config="true" signature="setupData()[pri:0, instance:api.test.NoteTests@3d9c13b5]" started-at="2024-03-21T11:45:06 AST" name="setupData" finished-at="2024-03-21T11:45:06 AST" duration-ms="72" status="PASS">
+        <test-method is-config="true" signature="setupData()[pri:0, instance:api.test.NoteTests@5fb759d6]" started-at="2024-03-23T11:47:02 AST" name="setupData" finished-at="2024-03-23T11:47:02 AST" duration-ms="43" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupData -->
-        <test-method signature="createNote()[pri:1, instance:api.test.NoteTests@3d9c13b5]" started-at="2024-03-21T11:45:06 AST" name="createNote" description="Create a note and verify it’s created successfully" finished-at="2024-03-21T11:45:07 AST" duration-ms="800" status="PASS">
+        <test-method signature="createNote()[pri:1, instance:api.test.NoteTests@5fb759d6]" started-at="2024-03-23T11:47:02 AST" name="createNote" description="Create a note and verify it’s created successfully" finished-at="2024-03-23T11:47:02 AST" duration-ms="480" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createNote -->
-        <test-method signature="getAllNotes()[pri:2, instance:api.test.NoteTests@3d9c13b5]" started-at="2024-03-21T11:45:07 AST" name="getAllNotes" description="Create a note and verify it’s added to the list of all notes" finished-at="2024-03-21T11:45:08 AST" duration-ms="1175" status="PASS">
+        <test-method signature="getAllNotes()[pri:2, instance:api.test.NoteTests@5fb759d6]" started-at="2024-03-23T11:47:02 AST" name="getAllNotes" description="Create a note and verify it’s added to the list of all notes" finished-at="2024-03-23T11:47:03 AST" duration-ms="888" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getAllNotes -->
-        <test-method signature="updateNote()[pri:3, instance:api.test.NoteTests@3d9c13b5]" started-at="2024-03-21T11:45:08 AST" name="updateNote" description="Update a note and verify it’s updated successfully" finished-at="2024-03-21T11:45:09 AST" duration-ms="953" status="PASS">
+        <test-method signature="updateNote()[pri:3, instance:api.test.NoteTests@5fb759d6]" started-at="2024-03-23T11:47:03 AST" name="updateNote" description="Update a note and verify it’s updated successfully" finished-at="2024-03-23T11:47:04 AST" duration-ms="459" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- updateNote -->
-        <test-method signature="deleteNote()[pri:4, instance:api.test.NoteTests@3d9c13b5]" started-at="2024-03-21T11:45:09 AST" name="deleteNote" description="Delete a note and verify it’s deleted successfully" finished-at="2024-03-21T11:45:10 AST" duration-ms="569" status="PASS">
+        <test-method signature="deleteNote()[pri:4, instance:api.test.NoteTests@5fb759d6]" started-at="2024-03-23T11:47:04 AST" name="deleteNote" description="Delete a note and verify it’s deleted successfully" finished-at="2024-03-23T11:47:04 AST" duration-ms="575" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteNote -->
       </class> <!-- api.test.NoteTests -->
       <class name="api.test.UserTests">
-        <test-method is-config="true" signature="setupData()[pri:0, instance:api.test.UserTests@7a55af6b]" started-at="2024-03-21T11:45:01 AST" name="setupData" finished-at="2024-03-21T11:45:01 AST" duration-ms="286" status="PASS">
+        <test-method is-config="true" signature="setupData()[pri:0, instance:api.test.UserTests@57bc27f5]" started-at="2024-03-23T11:46:58 AST" name="setupData" finished-at="2024-03-23T11:46:58 AST" duration-ms="146" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupData -->
-        <test-method signature="createuser()[pri:1, instance:api.test.UserTests@7a55af6b]" started-at="2024-03-21T11:45:01 AST" name="createuser" description="Register a new user and verify it’s created" finished-at="2024-03-21T11:45:03 AST" duration-ms="1574" status="PASS">
+        <test-method signature="createuser()[pri:1, instance:api.test.UserTests@57bc27f5]" started-at="2024-03-23T11:46:58 AST" name="createuser" description="Register a new user and verify it’s created" finished-at="2024-03-23T11:46:59 AST" duration-ms="881" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createuser -->
-        <test-method signature="userlogin()[pri:2, instance:api.test.UserTests@7a55af6b]" started-at="2024-03-21T11:45:03 AST" name="userlogin" description="Log in with a user and verify the profile information" finished-at="2024-03-21T11:45:05 AST" duration-ms="2284" status="PASS">
+        <test-method signature="userlogin()[pri:2, instance:api.test.UserTests@57bc27f5]" started-at="2024-03-23T11:46:59 AST" name="userlogin" description="Log in with a user and verify the profile information" finished-at="2024-03-23T11:47:01 AST" duration-ms="1802" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userlogin -->
-        <test-method signature="updateprofile()[pri:3, instance:api.test.UserTests@7a55af6b]" started-at="2024-03-21T11:45:05 AST" name="updateprofile" description="Update profile information and verify it’s updated successfully" finished-at="2024-03-21T11:45:06 AST" duration-ms="593" status="PASS">
+        <test-method signature="updateprofile()[pri:3, instance:api.test.UserTests@57bc27f5]" started-at="2024-03-23T11:47:01 AST" name="updateprofile" description="Update profile information and verify it’s updated successfully" finished-at="2024-03-23T11:47:01 AST" duration-ms="490" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- updateprofile -->
-        <test-method signature="changepassword()[pri:4, instance:api.test.UserTests@7a55af6b]" started-at="2024-03-21T11:45:06 AST" name="changepassword" description="Change the password and verify it’s updated successfully" finished-at="2024-03-21T11:45:06 AST" duration-ms="809" status="PASS">
+        <test-method signature="changepassword()[pri:4, instance:api.test.UserTests@57bc27f5]" started-at="2024-03-23T11:47:01 AST" name="changepassword" description="Change the password and verify it’s updated successfully" finished-at="2024-03-23T11:47:02 AST" duration-ms="673" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- changepassword -->
