@@ -16,6 +16,12 @@ public class UserTests {
 	User userPayload;
 	private static String accessToken;
 	Faker faker;
+	private static String name = "test21";
+	private static String passowrd = "test123";
+	private static String updateName = "test1234";
+	private static String updatePhone = "123456789";
+	private static String updateCompany = "mahmoud";
+	private static String newPassword = "123456789";
 
     public static String getAccessToken() {
         return accessToken;
@@ -26,9 +32,9 @@ public class UserTests {
 		
 		faker = new Faker();
 		userPayload = new User();
-		userPayload.setName("test21");
+		userPayload.setName(name);
 		userPayload.setEmail(faker.name().firstName()+"@test.test");
-		userPayload.setPassword("test123");
+		userPayload.setPassword(passowrd);
 	}
 	
 	@Test(priority=1,description="Register a new user and verify it’s created")
@@ -65,9 +71,9 @@ public class UserTests {
 	@Test(priority=3,description="Update profile information and verify it’s updated successfully")
 	public void updateprofile() {
 
-	    userPayload.setName("test1234");
-	    userPayload.setPhone("123456789");
-	    userPayload.setCompany("mahmoud");
+	    userPayload.setName(updateName);
+	    userPayload.setPhone(updatePhone);
+	    userPayload.setCompany(updateCompany);
 
 	    Response response = UsersEndPoints.updateProfile(userPayload, accessToken);
 	    response.then().log().all();
@@ -75,21 +81,20 @@ public class UserTests {
 	    Assert.assertEquals(response.getStatusCode(), 200);
 	    
 	    JsonPath jsonPathEvaluator = response.jsonPath();
-	    Assert.assertEquals(jsonPathEvaluator.get("data.name"), "test1234");
-	    Assert.assertEquals(jsonPathEvaluator.get("data.phone"), "123456789");
-	    Assert.assertEquals(jsonPathEvaluator.get("data.company"), "mahmoud");
+	    Assert.assertEquals(jsonPathEvaluator.get("data.name"), updateName);
+	    Assert.assertEquals(jsonPathEvaluator.get("data.phone"), updatePhone);
+	    Assert.assertEquals(jsonPathEvaluator.get("data.company"), updateCompany);
 	}
 	
 	@Test(priority=4,description="Change the password and verify it’s updated successfully")
 	public void changepassword() {
 		
 		userPayload.setCurrentPassword(userPayload.getPassword());
-	    userPayload.setNewPassword("123456789");
+	    userPayload.setNewPassword(newPassword);
 
 	    Response response = UsersEndPoints.changePassword(userPayload, accessToken);
 	    response.then().log().all();
 
 	    Assert.assertEquals(response.getStatusCode(), 200);
 	}
-
 }

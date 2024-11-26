@@ -1,7 +1,6 @@
 package api.endpoints;
 
 import static io.restassured.RestAssured.given;
-
 import api.payload.Note;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -17,6 +16,18 @@ public class NotesEndPoints {
 		  .body(Payload)
 		.when()
 		  .post(Routs.post_newnote_url);
+		
+		return response;
+	}
+	
+	public static Response getNote(String accessToken)
+	{
+		Response response = given()
+		  .header("x-auth-token", accessToken)
+		  .contentType(ContentType.JSON)
+		  .accept(ContentType.JSON)
+		.when()
+		  .get(Routs.get_note_url);
 		
 		return response;
 	}
@@ -43,6 +54,20 @@ public class NotesEndPoints {
 		  .body("{\"completed\": " + completed + "}")
 		.when()
 		  .patch(Routs.patch_note_url);
+		
+		return response;
+	}
+	
+	public static Response postNote(String id, Note Payload, String accessToken)
+	{
+		Response response = given()
+		  .header("x-auth-token", accessToken)
+		  .contentType(ContentType.JSON)
+		  .accept(ContentType.JSON)
+		  .pathParam("id", id)
+		  .body(Payload)
+		.when()
+		  .patch(Routs.put_note_url);
 		
 		return response;
 	}

@@ -11,16 +11,13 @@ public class HealtTests {
 
 	
 	@Test(description="Verify that the API is healthy")
-	public void createuser() {
+	public void healthcheck() {
 		
 		Response response = HealthEndpoints.checkHealth();
 		response.then().log().all();
-        attachResponseToAllure(response.getBody().asString());
 		Assert.assertEquals(response.getStatusCode(), 200);
 	}
 	
-    @Attachment(value = "Response Body", type = "text/plain")
-    public byte[] attachResponseToAllure(String responseBody) {
-        return responseBody.getBytes();
-    }
+	
 }
+

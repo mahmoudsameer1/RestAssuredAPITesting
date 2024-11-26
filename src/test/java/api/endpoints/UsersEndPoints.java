@@ -81,4 +81,26 @@ public class UsersEndPoints {
 		return response;
 	}
 	
+	public static Response forgotpwd(String email, String accessToken)
+	{
+		Response response = given()
+		  .contentType(ContentType.JSON)
+		  .accept(ContentType.JSON)
+		  .body(email)
+		.when()
+		  .post(Routs.post_forgotpwd_url);
+		
+		return response;
+	}
+	
+	public static Response logout(String accessToken)
+	{
+		Response response = given()
+		  .contentType(ContentType.JSON)
+		  .accept(ContentType.JSON)
+		.when()
+		  .delete(Routs.delete_logout_url);
+		
+		return response;
+	}
 }

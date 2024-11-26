@@ -6,9 +6,7 @@ import java.util.Map;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import com.github.javafaker.Faker;
-
 import api.endpoints.NotesEndPoints;
 import api.endpoints.UsersEndPoints;
 import api.payload.Note;
