@@ -42,7 +42,7 @@ jobs:
 
     - name: Zip Allure Report
       run: |
-        zip -r target/allure-report.zip target/allure-report
+        zip -r tallure-report.zip allure-results
 
     - name: Send Allure Report via Email
       uses: dawidd6/action-send-mail@v3
@@ -54,7 +54,7 @@ jobs:
         from: mahmoudsameer560@gmail.com
         subject: Allure Test Report
         body: Please find attached the Allure Test Report.
-        attachments: target/allure-report.zip
+        attachments: allure-report.zip
 
     - name: Clean up Allure
       run: rm -rf allure-2.21.0.tgz allure-2.21.0
