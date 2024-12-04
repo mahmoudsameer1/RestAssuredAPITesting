@@ -38,7 +38,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: allure-report
-        path: target/allure-report
+        path: allure-report
 
     - name: Zip Allure Report
       run: |
