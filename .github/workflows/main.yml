@@ -42,7 +42,7 @@ jobs:
 
     - name: Zip Allure Report
       run: |
-        zip -r tallure-report.zip allure-results
+        zip -r allure-report.zip allure-results
 
     - name: Send Allure Report via Email
       uses: dawidd6/action-send-mail@v3
