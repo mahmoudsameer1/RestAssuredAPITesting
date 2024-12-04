@@ -1,24 +1,57 @@
-name: Selenium with RestAssured - CI
- 
+name: Selenium with Testing - CI
+
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
- 
+    branches: [ "main" ]
+
 jobs:
   build:
- 
     runs-on: ubuntu-latest
- 
+
     steps:
     - uses: actions/checkout@v3
+
     - name: Set up JDK 20
       uses: actions/setup-java@v3
       with:
         java-version: '20'
         distribution: 'temurin'
         cache: maven
-     
-    - name: Build with Maven
-      run: mvn -B clean test
+
+    - name: Install Allure CLI
+      run: |
+        wget https://github.com/allure-framework/allure2/releases/download/2.21.0/allure-2.21.0.tgz
+        tar -zxvf allure-2.21.0.tgz
+        sudo mv allure-2.21.0 /opt/allure
+        sudo ln -s /opt/allure/bin/allure /usr/bin/allure
+
+    - name: Build and Test with Maven
+      run: mvn clean test
+
+    - name: Generate Allure Report
+      run: mvn allure:serve
+      continue-on-error: true
+
+    - name: Upload Allure Report as Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: allure-report
+        path: target/allure-report
+
+    - name: Send Allure Report via Email
+      uses: muhammad-ghazi/send-mail@v1.0.2
+      with:
+        smtp-server: smtp.gmail.com
+        smtp-port: 587
+        smtp-username: mahmoudsameer560@gmail.com
+        smtp-password: blxi ymqn qjlk jpio
+        to-email: mahmoudsameer560@gmail.com
+        from-email: mahmoudsameer560@gmail.com
+        subject: Allure Test Report
+        body: Please find attached the Allure Test Report.
+        attachment-path: target/allure-report.zip  # You can zip the report before attaching it
+
+    - name: Clean up Allure
+      run: rm -rf allure-2.21.0.tgz allure-2.21.0
