@@ -90,6 +90,18 @@
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
+			    <plugin>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-maven</artifactId>
+      <version>2.10.0</version> <!-- Ensure the version matches -->
+      <executions>
+        <execution>
+          <goals>
+            <goal>serve</goal> <!-- Serve the report locally after the tests -->
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
 		</plugins>
 	</build>
 </project>
