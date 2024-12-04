@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 name: Selenium with Testng - CI
-=======
-name: Selenium with Testing - CI
->>>>>>> 7ced2f09b54367e02fab2b60130f56474f5c82c6
 
 on:
   push:
