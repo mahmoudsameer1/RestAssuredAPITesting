@@ -41,12 +41,12 @@ jobs:
         path: target/allure-report
 
     - name: Send Allure Report via Email
-      uses: muhammad-ghazi/send-mail@v1.0.2
+      uses: dawidd6/action-send-mail@v3
       with:
         smtp-server: smtp.gmail.com
         smtp-port: 587
-        smtp-username: mahmoudsameer560@gmail.com
-        smtp-password: blxi ymqn qjlk jpio
+        smtp-username: mahmoudsameer560@gmail.com  # Gmail username stored in GitHub Secrets
+        smtp-password: blxi ymqn qjlk jpio  # App password stored in GitHub Secrets
         to-email: mahmoudsameer560@gmail.com
         from-email: mahmoudsameer560@gmail.com
         subject: Allure Test Report
